@@ -21,6 +21,7 @@
         <module>kafka/kafka-model</module>
         <module>kafka/kafka-producer</module>
         <module>app-config-data</module>
+        <module>common-config</module>
     </modules>
 
     <packaging>pom</packaging>
