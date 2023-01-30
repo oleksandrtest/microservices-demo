@@ -20,6 +20,7 @@
         <module>kafka/kafka-admin</module>
         <module>kafka/kafka-model</module>
         <module>kafka/kafka-producer</module>
+        <module>app-config-data</module>
     </modules>
 
     <packaging>pom</packaging>
