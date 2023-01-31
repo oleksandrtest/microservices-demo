@@ -21,3 +21,12 @@ spring:
           password: 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
           clone-on-start: true
       fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: jChWho3CLd+W5CmUpO02+MCdwvWpoRDsf58JOMzINF+D64shhbH3cXTvhbaaJ4db
+
+#jasypt:
+#  encryptor:
+##    password: Demo_Pwd!2023
+#    password: ${JASYPT_ENCRYPTOR_PASSWORD}
