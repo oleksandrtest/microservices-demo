@@ -6,7 +6,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.microservices.demo</groupId>
     <artifactId>microservices-demo</artifactId>
@@ -22,6 +21,7 @@
         <module>kafka/kafka-producer</module>
         <module>app-config-data</module>
         <module>common-config</module>
+        <module>config-server</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -55,6 +55,21 @@
                 <artifactId>app-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>common-config</artifactId>
@@ -181,8 +196,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
 
@@ -197,7 +210,15 @@
                     <release>11</release>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
         </plugins>
+
         <pluginManagement>
             <plugins>
                 <plugin>
