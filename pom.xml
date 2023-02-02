@@ -41,6 +41,9 @@
         <kafka-avro-serializer.version>7.3.1</kafka-avro-serializer.version>
         <spring-cloud.version>4.0.1</spring-cloud.version>
         <mavaen-resource-plugin.version>3.3.0</mavaen-resource-plugin.version>
+        <elasticsearch.version>8.4.1</elasticsearch.version>
+        <elasticsearch-rest-high-level-client.version>7.8.1</elasticsearch-rest-high-level-client.version>
+        <spring-data-elasticsearch.version>>5.0.0</spring-data-elasticsearch.version>
     </properties>
 
     <repositories>
@@ -62,6 +65,24 @@
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-index-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -180,6 +201,23 @@
                 <version>${avro.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch-rest-high-level-client.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>io.confluent</groupId>
@@ -216,19 +254,13 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <release>11</release>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${mavaen-resource-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
             </plugin>
         </plugins>
 

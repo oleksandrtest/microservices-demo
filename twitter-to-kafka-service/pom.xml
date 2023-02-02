@@ -81,7 +81,7 @@
                     <execution>
                         <phase>install</phase>
                         <goals>
-                            <goal>build-image-no-fork</goal>
+                            <goal>build-image</goal>
                         </goals>
                     </execution>
                 </executions>
