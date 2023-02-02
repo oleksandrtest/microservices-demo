@@ -17,14 +17,14 @@ spring:
         git:
           uri: https://github.com/oleksandrtest/config-server-repository
           default-label: main
-          username: oleksandrtest
-          password: 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
+          username: ***
+          password: ***
           clone-on-start: true
       fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: jChWho3CLd+W5CmUpO02+MCdwvWpoRDsf58JOMzINF+D64shhbH3cXTvhbaaJ4db
+      password: ***
 
 #jasypt:
 #  encryptor:
