@@ -5,6 +5,7 @@
  */
 package com.microservices.demo.kafka.avro.model;
 
+import lombok.Builder;
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -12,6 +13,7 @@ import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
+@Builder
 @org.apache.avro.specific.AvroGenerated
 public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -5190598237215532904L;
