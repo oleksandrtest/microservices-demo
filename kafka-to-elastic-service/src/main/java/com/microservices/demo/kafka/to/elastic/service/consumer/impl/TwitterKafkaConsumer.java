@@ -55,15 +55,15 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
 
     @EventListener
     public void onAppStarted(ApplicationStartedEvent event) {
-        kafkaAdminClient.checkTopicsCreated();
-        LOG.info("Topics with name {} is ready for operations!", kafkaConfigData
+        kafkaAdminClient.checktopicCreated();
+        LOG.info("topic with name {} is ready for operations!", kafkaConfigData
                 .getTopicNamesToCreate().toArray());
         Objects.requireNonNull(kafkaListenerEndpointRegistry
                 .getListenerContainer(kafkaConsumerConfigData.getConsumerGroupId())).start();
     }
 
     @Override
-    @KafkaListener(id = "${kafka-consumer-config.consumer-group-id}", topics = "${kafka-config.topic-name}")
+    @KafkaListener(id = "${kafka-consumer-config.consumer-group-id}", topic = "${kafka-config.topic-name}")
     public void receive(@Payload List<TwitterAvroModel> messages,
                         @Header(KafkaHeaders.RECEIVED_KEY) List<Integer> keys,
                         @Header(KafkaHeaders.RECEIVED_PARTITION) List<Integer> partitions,

@@ -1,5 +1,5 @@
 #!/bin/bash
-# check-kafka-topics-created.sh
+# check-kafka-topic-created.sh
 
 apt-get update -y
 
