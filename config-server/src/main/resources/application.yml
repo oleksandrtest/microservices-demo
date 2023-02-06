@@ -17,8 +17,8 @@ spring:
         git:
           uri: https://github.com/oleksandrtest/microservices-demo
           default-label: main
-          username: oleksandrtest
-          password: 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
+          username: ****
+          password: ****
           clone-on-start: true
           search-paths: config-server-repository
       fail-fast: true
