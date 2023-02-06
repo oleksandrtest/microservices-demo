@@ -1,5 +1,5 @@
 #!/bin/bash
-# check-kafka-topic-created.sh
+# check-kafka-topic.sh
 
 apt-get update -y
 
@@ -15,4 +15,4 @@ while [[ ! $kafkacatResult == *"twitter-topic"* ]]; do
   kafkacatResult=$(kafkacat -L -b kafka-broker-1:9092)
 done
 
-./cnb/lifecycle/launcher
+/cnb/process/web

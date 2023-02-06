@@ -15,16 +15,17 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/oleksandrtest/config-server-repository
+          uri: https://github.com/oleksandrtest/microservices-demo
           default-label: main
-          username: ***
-          password: ***
+          username: oleksandrtest
+          password: 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
           clone-on-start: true
+          search-paths: config-server-repository
       fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: ***
+      password: jChWho3CLd+W5CmUpO02+MCdwvWpoRDsf58JOMzINF+D64shhbH3cXTvhbaaJ4db
 
 #jasypt:
 #  encryptor:
